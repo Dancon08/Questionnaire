@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/answers.json</file>
+        <file>resources/radiobutton_checked.png</file>
+        <file>resources/radiobutton_unchecked.png</file>
+    </qresource>
+</RCC>
