@@ -1,7 +1,7 @@
 #include "FinishedWindow.hpp"
 #include "ui_FinishedWindow.h"
 
-FinishedWindow::FinishedWindow(quint8 result, QWidget *parent) :
+FinishedWindow::FinishedWindow(const QString &name, quint8 result, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::FinishedWindow),
     result_{result}
@@ -9,6 +9,7 @@ FinishedWindow::FinishedWindow(quint8 result, QWidget *parent) :
     ui->setupUi(this);
 
     ui->lblResult_->setText(QString{"You finished test!\n Your result: %1"}.arg(result_));
+    ui->lineName_->setText(name);
     connect(ui->lineName_, &QLineEdit::textChanged, this, &FinishedWindow::enableSaveBtn);
 
     setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);

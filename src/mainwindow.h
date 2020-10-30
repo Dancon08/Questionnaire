@@ -21,11 +21,16 @@ public:
 signals:
     void testFinished();
 
+public slots:
+    void setUserName(const QString& name);
+
 private slots:
     void initQuestionPage();
     void initResultPage();
     void nextQuestion();
     void saveResult();
+    void exportToCsv();
+    void exportToPdf();
 
 private:
     void connectUi();
@@ -40,5 +45,8 @@ private:
     QVector<Question> data_;
 
     quint8 result_{0};
+
+    QString userName_;
 };
+
 #endif // MAINWINDOW_H

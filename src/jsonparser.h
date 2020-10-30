@@ -3,6 +3,7 @@
 
 #include "questions.h"
 #include "result.hpp"
+#include "Account.hpp"
 
 #include <QVector>
 #include <QJsonArray>
@@ -15,6 +16,8 @@ public:
     static QVector<Question> loadQuestions(const QString& jsonPath);
     static QVector<Result> loadResults(const QString& jsonPath);
     static void saveResult(const QString& jsonPath, const Result& result);
+    static QVector<Account> loadAccounts(const QString& jsonPath);
+    static void saveAccount(const QString& jsonPath, const Account& account);
 
 
 private:

@@ -82,6 +82,7 @@ QVector<Result> JsonParser::loadResults(const QString &jsonPath)
 
         result.name_ = arrObj["name"].toString();
         result.result_ = arrObj["result"].toInt();
+        result.date_ = arrObj["date"].toString();
 
         retval.append(result);
     }
@@ -107,7 +108,7 @@ void JsonParser::saveResult(const QString &jsonPath, const Result &result)
     auto obj = jsonDoc.object();
 
     auto users = obj["users"].toArray();
-    users.push_back(QJsonObject{{"name", result.name_}, {"result", result.result_}});
+    users.push_back(QJsonObject{{"name", result.name_}, {"result", result.result_}, {"date", result.date_}});
 
     obj["users"] = users;
     jsonDoc.setObject(obj);
@@ -116,6 +117,73 @@ void JsonParser::saveResult(const QString &jsonPath, const Result &result)
     file.write(jsonDoc.toJson());
     file.close();
 
+}
+
+QVector<Account> JsonParser::loadAccounts(const QString &jsonPath)
+{
+    QVector<Account> retval{};
+
+    QFile file{jsonPath};
+
+    if( !file.open(QIODevice::ReadOnly) )
+    {
+        qDebug() << "Cannot open data file!";
+        return {};
+    }
+
+    auto jsonDoc = QJsonDocument::fromJson(file.readAll());
+
+    file.close();
+
+    auto obj = jsonDoc.object();
+
+    auto users = obj["users"].toArray();
+
+    if( users.isEmpty() )
+    {
+        return{};
+    }
+
+    for( const auto& arrObjRef : users )
+    {
+        auto arrObj = arrObjRef.toObject();
+        Account result{};
+
+        result.login_ = arrObj["login"].toString();
+        result.passwd_ = arrObj["passwd"].toString();
+
+        retval.append(result);
+    }
+
+    return retval;
+}
+
+void JsonParser::saveAccount(const QString &jsonPath, const Account &account)
+{
+    QVector<Account> retval{};
+
+    QFile file{jsonPath};
+
+    if( !file.open(QIODevice::ReadWrite) )
+    {
+        qDebug() << "Cannot open data file!";
+        qDebug() << jsonPath;
+        qDebug() << file.errorString();
+        return;
+    }
+
+    auto jsonDoc = QJsonDocument::fromJson(file.readAll());
+    auto obj = jsonDoc.object();
+
+    auto users = obj["users"].toArray();
+    users.push_back(QJsonObject{{"login", account.login_}, {"passwd", account.passwd_}});
+
+    obj["users"] = users;
+    jsonDoc.setObject(obj);
+
+    file.resize(0);
+    file.write(jsonDoc.toJson());
+    file.close();
 }
 
 QStringList JsonParser::arrayToList(const QJsonArray &arr)

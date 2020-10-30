@@ -12,7 +12,7 @@ class FinishedWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit FinishedWindow(quint8 result, QWidget *parent = nullptr);
+    explicit FinishedWindow(const QString& name, quint8 result, QWidget *parent = nullptr);
     ~FinishedWindow();
 
 signals:

@@ -7,6 +7,7 @@ struct Result
 {
     QString name_;
     quint8 result_;
+    QString date_;
 };
 
 #endif // RESULT_HPP

@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "AuthWnd.hpp"
+
 
 #include <QApplication>
 #include <QTextCodec>
@@ -127,7 +129,7 @@ void setQSS(QApplication& app)
                       QScrollBar::sub-line:vertical {
                       /*border: 1px solid 313131;*/
                       background: #ffffff;
-                      height: 20px;
+                      height: 20px;btnRegName_
                       subcontrol-position: top;
                       subcontrol-origin: margin;
                       }
@@ -162,5 +164,10 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.show();
+
+    AuthWnd wnd;
+    QObject::connect(&wnd, &AuthWnd::loginComplete, &w, &MainWindow::setUserName);
+    wnd.exec();
+
     return app.exec();
 }

@@ -38,7 +38,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="startPage">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -249,7 +249,7 @@ font: 12pt &quot;Source Sans Pro&quot;;</string>
            <enum>QAbstractItemView::SelectRows</enum>
           </property>
           <property name="columnCount">
-           <number>2</number>
+           <number>3</number>
           </property>
           <column>
            <property name="text">
@@ -259,6 +259,11 @@ font: 12pt &quot;Source Sans Pro&quot;;</string>
           <column>
            <property name="text">
             <string>Result</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Date</string>
            </property>
           </column>
          </widget>
@@ -286,6 +291,11 @@ font: 12pt &quot;Source Sans Pro&quot;;</string>
     </rect>
    </property>
   </widget>
+  <action name="actionExport_to_excel">
+   <property name="text">
+    <string>Export to excel</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
