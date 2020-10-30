@@ -52,6 +52,13 @@ void MainWindow::initQuestionPage()
         return;
     }
 
+    if( auto btn = btnGroup_->checkedButton() )
+    {
+        btnGroup_->setExclusive(false);
+        btn->setChecked(false);
+        btnGroup_->setExclusive(true);
+    }
+
 
     auto question = data_.at(index_);
     ui->textView_->setText(question.question_);
@@ -95,7 +102,7 @@ void MainWindow::nextQuestion()
     {
         if( auto answer = data_.at(index_).answerId_; answer == btnId )
         {
-            result_+=1;
+            result_+=10;
         }
     }
     else
