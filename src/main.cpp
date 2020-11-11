@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "AuthWnd.hpp"
 
-
 #include <QApplication>
 #include <QTextCodec>
 
@@ -9,7 +8,7 @@ void setQSS(QApplication& app)
 {
     app.setStyleSheet(R"(
                       QWidget {
-                      font-family: Source Sans Pro;
+                      font: 14pt "Sans Serif";
                       }
 
                       QMainWindow{
@@ -164,7 +163,6 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.show();
-
     AuthWnd wnd;
     QObject::connect(&wnd, &AuthWnd::loginComplete, &w, &MainWindow::setUserName);
     wnd.exec();

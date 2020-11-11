@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>385</width>
-    <height>116</height>
+    <width>1000</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,6 @@
    <string notr="true">                  QPushButton
                   {
                   background: #890709;
-                  font-size: 24px;
                   text-align: center;
                   color: #FFFFFF;
                   }
@@ -31,27 +30,62 @@
                   }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0" colspan="2">
-    <widget class="QLineEdit" name="lineName_">
-     <property name="placeholderText">
-      <string>Enter your name...</string>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTableWidget" name="tableCompare_">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>Вопрос</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ответ</string>
+      </property>
+     </column>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
+   <item row="1" column="0">
     <widget class="QLabel" name="lblResult_">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="2" column="0">
+    <widget class="QLineEdit" name="lineName_">
+     <property name="placeholderText">
+      <string>Введите ваше имя...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
     <widget class="QPushButton" name="btnSave_">
      <property name="enabled">
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>Ok</string>
+      <string>Ок</string>
      </property>
     </widget>
    </item>

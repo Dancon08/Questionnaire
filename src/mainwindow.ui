@@ -17,7 +17,6 @@
    <string notr="true">                  QPushButton
                   {
                   background: #890709;
-                  font-size: 24px;
                   text-align: center;
                   color: #FFFFFF;
                   }
@@ -38,7 +37,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="startPage">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -197,6 +196,13 @@ color: rgb(0, 0, 0);
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
+             <widget class="QLabel" name="lblTimer_">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
              <spacer name="horizontalSpacer_3">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -210,6 +216,16 @@ color: rgb(0, 0, 0);
              </spacer>
             </item>
             <item>
+             <widget class="QPushButton" name="btnPrev_">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Назад</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="btnNext_">
               <property name="font">
                <font>
@@ -221,11 +237,10 @@ color: rgb(0, 0, 0);
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);
-font: 12pt &quot;Source Sans Pro&quot;;</string>
+               <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="text">
-               <string>Next</string>
+               <string>Вперед</string>
               </property>
              </widget>
             </item>
@@ -287,7 +302,7 @@ font: 12pt &quot;Source Sans Pro&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>650</width>
-     <height>23</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

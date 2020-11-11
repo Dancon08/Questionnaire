@@ -17,7 +17,6 @@
    <string notr="true">                  QPushButton
                   {
                   background: #890709;
-                  font-size: 14px;
                   text-align: center;
                   color: #FFFFFF;
                   }
@@ -30,7 +29,7 @@
                   background: #890709;
                   }</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
+  <layout class="QGridLayout" name="gridLayout_3">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -76,7 +75,7 @@
          <item>
           <widget class="QLineEdit" name="lineLogin_">
            <property name="placeholderText">
-            <string>Login...</string>
+            <string>Логин...</string>
            </property>
           </widget>
          </item>
@@ -86,21 +85,30 @@
             <enum>QLineEdit::Password</enum>
            </property>
            <property name="placeholderText">
-            <string>Password...</string>
+            <string>Пароль...</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnLogin_">
+           <property name="font">
+            <font/>
+           </property>
            <property name="text">
-            <string>Login</string>
+            <string>Вход</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnRegister_">
+           <property name="font">
+            <font/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
-            <string>Register</string>
+            <string>Регистрация</string>
            </property>
           </widget>
          </item>
@@ -109,7 +117,7 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
-      <layout class="QGridLayout" name="gridLayout_3">
+      <layout class="QGridLayout" name="gridLayout_2">
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -127,13 +135,16 @@
        </property>
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLineEdit" name="lineRegName_">
            <property name="echoMode">
             <enum>QLineEdit::Normal</enum>
            </property>
            <property name="placeholderText">
-            <string>Name...</string>
+            <string>Логин...</string>
            </property>
           </widget>
          </item>
@@ -143,14 +154,14 @@
             <enum>QLineEdit::Password</enum>
            </property>
            <property name="placeholderText">
-            <string>Password...</string>
+            <string>Пароль...</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnCompleteReg_">
            <property name="text">
-            <string>Register</string>
+            <string>Зарегистрироваться</string>
            </property>
           </widget>
          </item>
