@@ -16,7 +16,7 @@ FinishedWindow::FinishedWindow(const QString &name, quint8 result, QVector<qint8
     ui->lineName_->setText(name);
     connect(ui->lineName_, &QLineEdit::textChanged, this, &FinishedWindow::enableSaveBtn);
 
-    ui->tableCompare_->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableCompare_->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); 
     ui->tableCompare_->verticalHeader()->hide();
 
     loadResults();
